@@ -37,22 +37,21 @@ function renderToDoLists() {
 
       <div class="to-do-list-item-grid">
         ${toDoList
-					.map(
-						// You would expect "checked='false'" to work here, but apparently it doesn't.
-						(item) => `
+				.map(
+					// You would expect "checked='false'" to work here, but apparently it doesn't.
+					(item) => `
 
           <div class="to-do-list-item-name">${item.name}</div>
           <div class="to-do-list-item-date">${item.date}</div>
 
-          <input type="checkbox" ${
-						item.completed ? "checked='true'" : ""
-					} class="js-completed-${index}" />
+          <input type="checkbox" ${item.completed ? "checked='true'" : ""
+						} class="js-completed-${index}" />
 
           <button class="delete-to-do-list-item-button js-delete-to-do-list-item-button-${index}">Delete</button>
 
         `,
-					)
-					.join("")}
+				)
+				.join("")}
       </div>
     </div>
 
@@ -101,7 +100,7 @@ function renderToDoLists() {
 				);
 
 				if (nameInput.value && dateInput.value) {
-					toDoLists[index].push({name: nameInput.value, date: dateInput.value});
+					toDoLists[index].push({ name: nameInput.value, date: dateInput.value });
 
 					renderToDoLists();
 				}
