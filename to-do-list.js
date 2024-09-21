@@ -1,5 +1,3 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable func-style */
 const toDoLists = JSON.parse(localStorage.getItem("toDoLists")) ?? [];
 
 const toDoListContainerDiv = document.querySelector("div.js-to-do-lists-grid");
@@ -102,9 +100,7 @@ function renderToDoLists() {
 					`input.js-date-input-${index}`,
 				);
 
-				// @ts-ignore
 				if (nameInput.value && dateInput.value) {
-					// @ts-ignore
 					toDoLists[index].push({name: nameInput.value, date: dateInput.value});
 
 					renderToDoLists();
@@ -118,7 +114,6 @@ function renderToDoLists() {
 
 		completedElements.forEach((element, elementIndex) =>
 			element.addEventListener("click", () => {
-				// @ts-ignore
 				toDoLists[index][elementIndex].completed =
 					!toDoLists[index][elementIndex].completed;
 
